@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="header-title">Resume Builder</h1>
+            <p>Create a professional resume with ease. Fill in the form below and preview your resume instantly.</p>
+        </header>
+        
+        <!-- Form Section -->
+        <section class="form-section" id="formSection">
+            <h2 class="section-title">Profile Image</h2>
+            <input title="Upload profile image" type="file" id="profileImage" accept="image/*" onchange="previewImage(event)">
+            
+            <h2 class="section-title">Basic Information</h2>
+            <input type="text" id="name" placeholder="Full Name" aria-label="Full Name" required>
+            <input type="text" id="title" placeholder="Profession (e.g., Web Developer)" aria-label="Profession" required>
+            
+            <h2 class="section-title">Bio</h2>
+            <textarea id="bio" placeholder="Write a short bio about yourself" rows="4" aria-label="Bio" required></textarea>
+            
+            <h2 class="section-title">Contact Information</h2>
+            <input type="tel" id="phone" placeholder="Phone Number" aria-label="Phone Number" required>
+            <input type="email" id="email" placeholder="Email Address" aria-label="Email Address" required>
+            <input type="url" id="website" placeholder="Personal Website or Portfolio URL" aria-label="Website" required>
+            <input type="url" id="github" placeholder="GitHub Profile URL" aria-label="GitHub" required>
+            <input type="url" id="linkedin" placeholder="LinkedIn Profile URL" aria-label="LinkedIn" required>
+            <input type="text" id="location" placeholder="Location (City, Country)" aria-label="Location" required>
+            
+            <h2 class="section-title">Education</h2>
+            <input type="text" id="school" placeholder="School or Institution Name" aria-label="School" required>
+            <input type="text" id="degree" placeholder="Degree (e.g., B.Sc. in Computer Science)" aria-label="Degree" required>
+            <input type="text" id="eduDate" placeholder="Education Period (e.g., 2019 - 2023)" aria-label="Education Date" required>
+            
+            <h2 class="section-title">Work Experience</h2>
+            <textarea id="experience" placeholder="Describe your work experience, roles, and responsibilities" aria-label="Work Experience" required></textarea>
+            
+            <h2 class="section-title">Skills</h2>
+            <input type="text" id="skills" placeholder="List your skills, separated by commas" aria-label="Skills" required>
+            
+            <h2 class="section-title">Languages</h2>
+            <input type="text" id="languages" placeholder="Languages you speak, separated by commas" aria-label="Languages" required>
+            
+            <button onclick="generateResume()">Generate Resume</button>
+        </section>
+
+        <!-- Resume Preview Section -->
+        <section class="resume-preview" id="resume">
+            <div class="preview-top">
+                <div class="preview-top-left">
+                    <h1 id="previewName">Your Name</h1>
+                    <p id="previewTitle">Your Profession</p>
+                    <img id="resumeProfileImage" class="profile-img" alt="Profile picture preview">
+                </div>
+                <div class="preview-top-right">
+                    <p id="previewBio">Short bio about you</p>
+                </div>
+            </div>
+
+            <div class="preview-bottom">
+                <div class="bottom-left">
+                    <div class="resume-section">
+                        <h2 class="section-title">Contact</h2>
+                        <p id="previewContact">Phone, Email, Website, LinkedIn, GitHub, Location</p>
+                    </div>
+                    <div class="resume-section">
+                        <h2 class="section-title">Education</h2>
+                        <p id="previewEducation">Education details</p>
+                    </div>
+                </div>
+
+                <div class="bottom-right">
+                    <div class="resume-section">
+                        <h2 class="section-title">Work Experience</h2>
+                        <p id="previewExperience">Work experience details</p>
+                    </div>
+                    <div class="resume-section">
+                        <h2 class="section-title">Skills</h2>
+                        <div id="previewSkills" class="skills-container">Skills will display here</div>
+                    </div>
+                    <div class="resume-section">
+                        <h2 class="section-title">Languages</h2>
+                        <div id="previewLanguages" class="languages-container">Languages will display here</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" id="previewGithub" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="#" id="previewLinkedin" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+        </section>
+
+        <div id="action-buttons">
+            <button id="edit" onclick="editResume()">Edit</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="header-title">Resume Builder</h1>
+        </div>
+        <!-- Form Section -->
+        <div class="form-section" id="formSection">
+            <h2 class="section-title">Profile Image</h2>
+            <input title="image" type="file" id="profileImage" accept="image/*" onchange="previewImage(event)">
+            <h2 class="section-title">Basic Information</h2>
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="title" placeholder="Profession" required>
+
+            
+            <h2 class="section-title">Bio</h2>
+            <textarea id="bio" placeholder="write about yourself" rows="4" required></textarea>
+
+            <h2 class="section-title">Contact</h2>
+            <input type="text" id="phone" placeholder="Phone" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="website" placeholder="Website" required>
+            <input type="url" id="github" placeholder="GitHub URL" required>
+            <input type="url" id="linkedin" placeholder="LinkedIn URL" required>
+            <input type="text" id="location" placeholder="Location" required>
+            
+            <h2 class="section-title">Education</h2>
+            <input type="text" id="school" placeholder="School Name" required>
+            <input type="text" id="degree" placeholder="Degree" required>
+            <input type="text" id="eduDate" placeholder="Education Date" required>
+
+            <h2 class="section-title">Work Experience</h2>
+            <textarea id="experience" placeholder="Work Experience" required></textarea>
+
+            <h2 class="section-title">Skills</h2>
+            <input type="text" id="skills" placeholder="Skills (comma-separated)" required>
+
+            <h2 class="section-title">Languages</h2>
+            <input type="text" id="languages" placeholder="Languages (comma-separated)" required>
+
+            <h2 class="section-title">Social Links</h2>
+           
+            <button onclick="generateResume()">Generate Resume</button>
+        </div>
+
+        <!-- Resume Preview Section -->
+        <div class="resume-preview" id="resume">
+
+            <!-- Preview content starts  -->
+            <div class="preview-top">
+                <div class="preview-top-left">
+                <h1 id="previewName">Your Name</h1>
+                <p id="previewTitle">Your Title</p>
+                <img alt="profile picture" id="resumeProfileImage" class="profile-img">
+                </div>
+                <div class="preview-top-right">
+                    <p id="previewBio"></p>
+                </div>
+            </div>
+
+            <div class="preview-bottom">
+                <!-- Left Column -->
+                <div class="bottom-left">
+                    
+
+                        <div class="resume-section">
+                        <h2 class="section-title">CONTACT</h2>
+                        <p id="previewContact"></p>
+                    </div>
+                    <hr class="h-line">
+                    <div class="resume-section">
+                        <h2 class="section-title">EDUCATION</h2>
+                        <p id="previewEducation"></p>
+                    </div>
+                    <hr class="h-line">
+                </div>
+
+                <!-- Right Column -->
+                <div class="bottom-right">
+                    <div class="resume-section">
+                        <h2 class="section-title">WORK EXPERIENCE</h2>
+                        <p id="previewExperience"></p>
+                    </div>
+                    <hr class="h-line">
+                    <div class="resume-section">
+                        <h2 class="section-title">SKILLS</h2>
+                        <div id="previewSkills" class="skills-container"></div>
+                    </div>
+                    <hr class="h-line">
+                    <div class="resume-section">
+                        <h2 class="section-title">LANGUAGES</h2>
+                        <div id="previewLanguages" class="languages-container"></div>
+                    </div>
+                    <hr class="h-line">
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" id="previewGithub" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="#" id="previewLinkedin" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+            </div>
+
+            <!-- Preview content ends  -->
+
+            
+            
+        </div>
+    </div>
+   <script src="script.js"></script>
+</body>
+</html>
