@@ -1,89 +1,45 @@
-'use client';
-import React, { useState } from 'react';
+import Image from "next/image";
+import React from "react";
 
-import Link from 'next/link'
-const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
+const Navbar = () => {
   return (
-    <>
-    <header className='flex justify-between'>
-      <div >
-          <div id='logo' className=" z-10 lg:w-[220px] md:w-[150px] w-[120px] h-[100px] lg:h-[200px] md:h-[130px] flex justify-center items-center absolute lg:-top-20 md:-top-12 -top-9  lg:-left-5 md:-left-4 -left-3 bg-gradient-to-r from-[#e90074] to-[#660088] rounded-br-[100%] rounded-bl-[120px]">
-          <h1 className="lg:text-5xl md:text-4xl text-3xl lg:mt-12 md:mt-9 mt-5 font-bold">HR</h1>
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#6b1dfcd0]/50 bg-[#00000017] backdrop-blur-md z-50 px-10">
+      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
+        <a
+          href="#about-me"
+          className="h-auto w-auto flex flex-row items-center"
+        >
+          <Image
+            src="/NavLogo.png"
+            alt="logo"
+            width={70}
+            height={70}
+            className="cursor-pointer hover:animate-slowspin"
+          />
+          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
+            Hasan Rafay
+          </span>
+        </a>
+
+        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
+          <div className="flex items-center justify-between w-full h-auto border border-[#10ea5961] bg-[#0014075e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200 ">
+            <a href="/" className="hover:text-green-300 cursor-pointer ">
+              About me
+            </a>
+            <a href={"/myservices"} className="hover:text-green-300 cursor-pointer">
+            Services
+            </a>
+            <a href="/portfolio" className="hover:text-green-300 cursor-pointer">
+            Portfolio
+            </a>
+            <a href="/contact" className="hover:text-green-300 cursor-pointer">
+            Contact
+            </a>
           </div>
         </div>
-        
-        <nav className='py-10 px-80 md:block hidden'>
-            <ul className='flex gap-16 text-[18px]'>
-                <li className='active'>
-                    <Link href={"/"}>About Me</Link>
-                </li>
-                <li>
-                    <Link href={"/myservices"}>My Services</Link>
-                </li>
-                <li>
-                    <Link href={"/portfolio"}>Portfolio</Link>
-                </li>
-                <li>
-                    <Link href={"/contact"}>Contact Me</Link>
-                </li>
-            </ul>
-        </nav>
-        
-        <button
-            className="md:hidden hover:bg-transparent hover:text-[#00e91f] inline-flex items-center justify-center p-2 rounded text-white focus:outline-none"
-            onClick={toggleMenu}
-          >
-            {/* Hamburger icon */}
-            <svg
-              className={`z-10 w-8 h-8 ${isMenuOpen ? 'hidden' : 'block'}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
+      </div>
+    </div>
+  );
+};
 
-            {/* Close icon */}
-            <svg
-              className={`z-10 w-8 h-8 ${isMenuOpen ? 'block' : 'hidden'}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-    </header>
-    {isMenuOpen && (
-          <div id='toggleNavbar' className="md:hidden my-4 absolute top-0 w-full text-xl bg-[#1c1c1c] bg-opacity-[0.9]  text-white flex flex-col items-center ml-3 space-y-2 py-2">
-            <Link className='hover:text-[#e90074]' href="/"  onClick={toggleMenu}> 
-                <h1>About</h1>
-            </Link>
-            <Link className='hover:text-[#e90074]' href="/myservices" onClick={toggleMenu}>
-            <h1>My Services</h1>
-            </Link>
-            <Link className='hover:text-[#e90074]' href="/portfolio" onClick={toggleMenu}>
-             <h1>Portfolio</h1>
-            </Link>
-            <Link className='hover:text-[#e90074]' href="/contact" onClick={toggleMenu}>
-             <h1>Contact Me</h1>
-            </Link>
-            
-          </div>
-        )}
-    </>
-  )
-}
-
-export default Header
+export default Navbar;

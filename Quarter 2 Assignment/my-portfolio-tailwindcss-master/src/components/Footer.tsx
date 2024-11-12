@@ -2,7 +2,7 @@ import { FaGithub , FaLinkedin , FaDev } from "react-icons/fa";
 import Link from "next/link";
 const Footer = () => {
   return (
-    <div className=" flex md:flex-row flex-col justify-between gap-3 mt-10 md:px-20 px-10 py-3 items-center bg-gradient-to-r from-[#e90074] to-[#660088]">
+    <div className=" flex md:flex-row flex-col justify-between gap-3 mt-10 md:px-20 px-10 py-3 items-center bg-gradient-to-r from-[#00e975] to-[#003988]">
       <p className=" sm:text-[16px] text-[16px]">all right reserved <span className="text-[#660088] font-bold">Hasan Rafay</span> 2024</p>
       <ul className="flex gap-4 text-2xl">
         <li>

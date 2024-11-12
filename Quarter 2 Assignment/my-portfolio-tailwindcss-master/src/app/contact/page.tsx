@@ -1,6 +1,6 @@
 const Page = () => {
   return (
-    <div className="flex flex-col items-center gap-12 lg:my-20 my-28 md:mx-40 mx-16 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 py-16 px-6 rounded-lg shadow-lg">
+    <div className="flex flex-col items-center gap-12 lg:my-20 my-28 md:mx-40 mx-16 bg-gradient-to-r from-blue-500 via-blue-400 to-green-500 py-16 px-6 rounded-lg shadow-lg">
       <h1 className="md:text-5xl sm:text-4xl text-3xl font-bold text-white text-center uppercase tracking-wide">
         CONTACT ME
       </h1>
@@ -41,7 +41,7 @@ const Page = () => {
         {/* Google Map */}
         <div className="flex justify-center items-center sm:w-[40%]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7239.739029092916!2d67.19077603374697!3d24.868305811695993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb330aed6e64901%3A0x549ade1e16dbb2c6!2sGohar%20Green%20City%20Bagh%20e%20Ibrahim%20Society%20Shah%20Faisal%20Colony%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1731093889715!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d57905.43762618489!2d67.17201167779811!3d24.894916601024892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3eb337d44b3152fb%3A0x22644ac07219ca2a!2sBurhani%20Town%2C%20Khokhrapar%20Yousuf%20Nagar%20Malir%20Cantonment%2C%20Karachi!3m2!1d24.8948444!2d67.2132113!4m5!1s0x3eb337d44b3152fb%3A0x22644ac07219ca2a!2sBurhani%20Town%2C%20Survey%20No.%20455%2C%20456%2C%20Khokhrapar%20Malir%20Cantonment%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh!3m2!1d24.8948444!2d67.2132113!5e0!3m2!1sen!2s!4v1731306616805!5m2!1sen!2s"
             width="100%"
             height="350"
             loading="lazy"
