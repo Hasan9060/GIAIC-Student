@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1c1c1c;
+  --foreground: #ffffff;
+  --primary-color: #e90074;
+  --secondary-color: #660088;
+  --accent-color: deeppink;
+  --input-bg: #2f2c2e;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Arial', Helvetica, sans-serif;
+  transition: all 0.5s linear;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+nav ul li:hover {
+  color: var(--accent-color);
+}
+
+input, textarea {
+  width: 100%;
+  max-width: 400px;
+  background: var(--input-bg);
+  color: var(--foreground);
+  padding: 10px 20px;
+  border-radius: 20px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+iframe {
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+iframe:hover {
+  transform: scale(1.05);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--foreground);
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--foreground);
+  transform: scale(1.05);
+}
+
+@media (max-width: 920px) {
+  input, textarea {
+    width: 100%;
+    max-width: 350px;
+  }
+  iframe {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  input, textarea {
+    width: 100%;
+    max-width: 300px;
+  }
+  iframe {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 640px) {
+  input, textarea {
+    width: 100%;
+    max-width: 400px;
+  }
+  iframe {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  input, textarea {
+    width: 100%;
+    max-width: 300px;
+  }
+  iframe {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
